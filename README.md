@@ -151,7 +151,3 @@ docker-compose logs resume-redactor
 
 **Port 8000 already in use:**
 Edit `docker-compose.yml` and change `"8000:8000"` to `"8001:8000"` (or any free port)
-
-## 📧 Contact
-
-[Add contact information here]
