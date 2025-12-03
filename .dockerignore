@@ -1,0 +1,56 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.pytest_cache
+.mypy_cache
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+temp.txt
+*.tmp
+*.log
+/tmp/*
+
+# Documentation (if you want to exclude from image)
+# README.md
+# docs/
+
+# Test files (uncomment if tests shouldn't be in image)
+# tests/
+# *_test.py
+# test_*.py
+
+# Docker files
+docker-compose.yml
+Dockerfile
+.dockerignore

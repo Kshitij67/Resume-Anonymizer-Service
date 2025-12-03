@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  resume-redactor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: resume-redactor
+    ports:
+      - "8000:8000"
+    environment:
+      SERVICE_MODE: "production"
+      CLEANUP_AFTER_HOURS: "6"
+    volumes:
+      - resume_data:/app/data 
+    restart: unless-stopped
+
+volumes:
+  resume_data:
