@@ -47,31 +47,6 @@ You should see the FastAPI interactive documentation (Swagger UI).
 
 Accepts a PDF resume and returns a redacted version with sensitive information removed.
 
-**Using cURL:**
-
-```bash
-curl -X POST "http://localhost:8000/anonymize" \
-  -H "accept: application/pdf" \
-  -H "Content-Type: multipart/form-data" \
-  -F "file=@/path/to/resume.pdf" \
-  --output anonymized_resume.pdf
-```
-
-**Using Python:**
-
-```python
-import requests
-
-with open("resume.pdf", "rb") as f:
-    response = requests.post(
-        "http://localhost:8000/anonymize",
-        files={"file": f}
-    )
-
-with open("anonymized_resume.pdf", "wb") as out:
-    out.write(response.content)
-```
-
 **Using Postman:**
 
 1. Set method to `POST`
@@ -80,20 +55,6 @@ with open("anonymized_resume.pdf", "wb") as out:
 4. Key: `file` (type: File)
 5. Value: Select your PDF file
 6. Send → Save response as PDF
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Copy `.env.example` to `.env` and customize:
-
-```bash
-cp .env.example .env
-```
-
-Available options:
-- `SERVICE_MODE`: Operation mode (`production` or `development`)
-- `CLEANUP_AFTER_HOURS`: Hours before temporary files are cleaned up (default: 6)
 
 ### Redacted Entities
 
@@ -190,20 +151,6 @@ docker-compose logs resume-redactor
 
 **Port 8000 already in use:**
 Edit `docker-compose.yml` and change `"8000:8000"` to `"8001:8000"` (or any free port)
-
-**Out of memory errors:**
-Increase Docker's memory allocation (Docker Desktop: Settings → Resources)
-
-**OCR not working:**
-Ensure Tesseract is properly installed in the container (check Dockerfile)
-
-## 📄 License
-
-[Add your license here]
-
-## 🤝 Contributing
-
-[Add contribution guidelines here]
 
 ## 📧 Contact
 
